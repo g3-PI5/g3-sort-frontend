@@ -1,8 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 function App() {
 	const [algorithm, setAlgorithm] = useState('')
+	const [search, setSearch] = useState(0)
+	const [value, setValue] = useState(0)
 	const handleTime = async () => {
 		console.log(algorithm)
 	}
@@ -19,6 +21,9 @@ function App() {
 			</select>
 			<div className="actions">
 				<button onClick={handleTime}>Entrar</button>
+			</div>
+			<div className="actions">
+				<textarea onChange={e => setAlgorithm(e.target.value)}>Entrar</textarea>
 			</div>
 		</div>
 	);
