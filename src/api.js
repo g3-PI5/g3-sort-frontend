@@ -19,8 +19,8 @@ export const countingSort = async (value) => {
 
 //Rotas para os algoritmos de Searching
 export const binarySearch = async (value, search) => {
-	return api.post("/counting", { value, search });
+	return api.post("/binary", { value, search });
 };
 export const linearSearch = async (value, search) => {
-	return api.post("/counting", { value, search });
+	return api.post("/linear", { value, search });
 };
