@@ -11,37 +11,54 @@ import {
 function App() {
 	const [algorithm, setAlgorithm] = useState("radix");
 	const [search, setSearch] = useState(0);
-	const [selected, setSelected] = useState(true);
-	const [time, setTime] = useState(-1);
-
+	const [time, setTime] = useState("Tempo necessário para execucao");
 	const [value, setValue] = useState(0);
+	const [loading, isLoading] = useState(false);
+
+	const [check, isChecked] = useState(true);
 
 	const handleTime = async (option) => {
+		isLoading(true);
 		var response;
 		console.log(option);
 		switch (option) {
 			case "radix":
 				response = await radixSort(value);
-				setTime(response.data.time + " ms");
+				if (!response.data.time) setTime("Tamanho Inválido");
+				else setTime(response.data.time + " ms");
 				break;
 			case "counting":
 				response = await countingSort(value);
-				setTime(response.data.time + " ms");
+				if (!response.data.time) setTime("Tamanho Inválido");
+				else setTime(response.data.time + " ms");
 				break;
 			case "bubble":
 				response = await bubbleSort(value);
-				setTime(response.data.time + " ms");
+				if (!response.data.time) setTime("Tamanho Inválido");
+				else setTime(response.data.time + " ms");
 				break;
+
 			case "binary":
 				response = await binarySearch(value, search);
-				setTime(response.data.time + " ms");
+				if (!response.status === 200) setTime("Tamanho Inválido");
+				else
+					setTime(
+						response.data.time + " ms" + "\nIndex: " + response.data.index
+					);
 				break;
 			case "linear":
 				response = await linearSearch(value, search);
-				setTime(response.data.time + " ms");
+				if (!response.status === 200) setTime("Tamanho Inválido");
+				else
+					setTime(
+						response.data.time + " ms" + "\nIndex: " + response.data.index
+					);
 				break;
+			default:
+				setTime("Internal Server Error");
 		}
 		console.log(response);
+		isLoading(false);
 	};
 
 	return (
@@ -68,17 +85,16 @@ function App() {
 			</div>
 			<div className="actions">
 				<input
-					disabled={selected}
+					disabled={check}
 					type="text"
 					placeholder="Insira o numero que deseja buscar"
-					onChange={(e) => setValue(e.target.value)}
+					onChange={(e) => setSearch(e.target.value)}
 				></input>
 				<input
-					type="button"
-					onClick={() => {
-						setSelected(!selected);
-					}}
-					value="Search Algorithm"
+					type="checkbox"
+					checked={!check}
+					onChange={() => isChecked(!check)}
+					value="Searching ? "
 				></input>
 
 				<h1>{time}</h1>
@@ -87,6 +103,7 @@ function App() {
 			<div className="button">
 				<button onClick={() => handleTime(algorithm)}>Entrar</button>
 			</div>
+			<div className="loader"> {loading && <div class="c-loader"></div>}</div>
 		</div>
 	);
 }
