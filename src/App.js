@@ -7,7 +7,7 @@ import {
 	linearSearch,
 	radixSort,
 } from "./service/api";
-//1
+//12
 
 function App() {
 	const [algorithm, setAlgorithm] = useState("radix");
