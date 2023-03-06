@@ -79,7 +79,7 @@ function App() {
 			<div className="teste">
 				<input
 					type="text"
-					placeholder="Insira o tamanho do array"
+					placeholder="Insira o tamanho do array:"
 					onChange={(e) => setValue(e.target.value)}
 				></input>
 			</div>
@@ -87,7 +87,7 @@ function App() {
 				<input
 					disabled={check}
 					type="text"
-					placeholder="Insira o numero que deseja buscar"
+					placeholder="Insira o numero que deseja buscar:"
 					onChange={(e) => setSearch(e.target.value)}
 				></input>
 				<input
