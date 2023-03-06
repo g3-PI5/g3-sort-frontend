@@ -86,6 +86,7 @@ function App() {
 			</div>
 			<div className="actions">
 				<input
+					id="input-num"
 					disabled={check}
 					type="text"
 					placeholder="Insira o numero que deseja buscar:"
