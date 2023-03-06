@@ -11,7 +11,7 @@ import {
 function App() {
 	const [algorithm, setAlgorithm] = useState("radix");
 	const [search, setSearch] = useState(0);
-	const [time, setTime] = useState("Tempo necessário para execucao");
+	const [time, setTime] = useState("Tempo necessário para execução");
 	const [value, setValue] = useState(0);
 	const [loading, isLoading] = useState(false);
 
@@ -43,7 +43,7 @@ function App() {
 				if (!response.status === 200) setTime("Tamanho Inválido");
 				else
 					setTime(
-						response.data.time + " ms" + "\nIndex: " + response.data.index
+						response.data.time + " ms"
 					);
 				break;
 			case "linear":
@@ -51,7 +51,7 @@ function App() {
 				if (!response.status === 200) setTime("Tamanho Inválido");
 				else
 					setTime(
-						response.data.time + " ms" + "\nIndex: " + response.data.index
+						response.data.time + " ms"
 					);
 				break;
 			default:
@@ -101,9 +101,9 @@ function App() {
 			</div>
 
 			<div className="button">
-				<button onClick={() => handleTime(algorithm)}>Entrar</button>
+				<button onClick={() => handleTime(algorithm)}>Enter</button>
 			</div>
-			<div className="loader"> {loading && <div class="c-loader"></div>}</div>
+			<div className="loader"> {loading && <div className="c-loader"></div>}</div>
 		</div>
 	);
 }
