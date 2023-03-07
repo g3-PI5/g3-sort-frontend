@@ -7,6 +7,7 @@ import {
 	linearSearch,
 	radixSort,
 } from "./service/api";
+import Table from "./Components/Table";
 
 
 function App() {
@@ -105,6 +106,8 @@ function App() {
 				<button onClick={() => handleTime(algorithm)}>Enter</button>
 			</div>
 			<div className="loader"> {loading && <div className="c-loader"></div>}</div>
+
+			<Table />
 		</div>
 	);
 }
