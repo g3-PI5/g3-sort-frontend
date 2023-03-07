@@ -6,7 +6,8 @@ import {
 	countingSort,
 	linearSearch,
 	radixSort,
-} from "./service/api"; //teste1
+} from "./service/api";
+
 
 function App() {
 	const [algorithm, setAlgorithm] = useState("radix");
@@ -20,7 +21,6 @@ function App() {
 	const handleTime = async (option) => {
 		isLoading(true);
 		var response;
-		console.log(option);
 		switch (option) {
 			case "radix":
 				response = await radixSort(value);
@@ -57,7 +57,7 @@ function App() {
 			default:
 				setTime("Internal Server Error");
 		}
-		console.log(response);
+		console.log(response.data);
 		isLoading(false);
 	};
 
