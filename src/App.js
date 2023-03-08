@@ -102,6 +102,7 @@ function App() {
 				<div className="teste">
 					<input
 						type="text"
+						id="tamarray"
 						placeholder="Tamanho do Conjunto"
 						onChange={(e) => setValue(e.target.value)}
 					></input>
@@ -124,11 +125,13 @@ function App() {
 				</div>
 
 				<div className="button">
-					<button disabled={(algorithm == "binary" && search < 20) || (algorithm == "binary" && search > 2000000)} onClick={() => handleTime(algorithm)}>Enter</button>
+					<button id="buttonn" disabled={(algorithm == "binary" && search < 20) || (algorithm == "binary" && search > 2000000)} onClick={() => handleTime(algorithm)}>Enter</button>
 				</div>
 
 			</div>
-			<Table selection={selection} radix={radix} bubble={bubble} binary={binary} linear={linear} />
+			<div id="tablestyle">
+				<Table selection={selection} radix={radix} bubble={bubble} binary={binary} linear={linear} />
+			</div>
 		</div>
 	);
 }
