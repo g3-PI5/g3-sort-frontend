@@ -1,3 +1,38 @@
 .Table {
-    background-color: antiquewhite;
+    padding-top: 50px;
+    display: grid;
+}
+
+.selectionValues {
+    grid-column-start: 0;
+    grid-column-end: 1;
+}
+
+.radixValues {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.bubbleValues {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.binaryValues {
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+
+.linearValues {
+    grid-column-start: 7;
+    grid-column-end: 8;
+}
+
+label {
+    font-size: 3vh;
+
+}
+
+.values {
+    padding-top: 10px;
 }

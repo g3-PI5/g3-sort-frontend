@@ -1,13 +1,17 @@
 .App {
   text-align: center;
-  height:100vh;
+  height: 100vh;
+
 }
+
 .loader {
   padding-top: 10px;
   display: flex;
   justify-content: center;
   text-align: center;
+  padding-top: 20%;
 }
+
 .c-loader {
   animation: is-rotating 1s infinite;
   border: 6px solid #e5e5e5;

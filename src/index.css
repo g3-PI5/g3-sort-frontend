@@ -11,19 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-#input-num{
-
-    border: 1px solid black;
-    border-radius: 2px;
-    height: 30;
-    width: 220px;
-    text-align: center;
-    background-color: lightgray;
-    font-family:Georgia, 'Times New Roman', Times, serif
-}
-#input-num:hover{
-
-    border: 2px solid black;
-
-}
