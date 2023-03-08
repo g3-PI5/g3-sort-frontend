@@ -11,19 +11,81 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.App{
+
+   background-image: linear-gradient(rgb(161, 161, 161),lightgray, white);
+   font-family:Georgia, 'Times New Roman', Times, serif;
+   text-align: center;
+   justify-content: center;
+
+}
+
+.options{
+
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    width: 120px;
+    height: 30px;
+    background-color: whitesmoke;
+    border: 0px;
+    border-radius: 4px;
+
+
+}
+
+#tamarray{
+
+    margin-bottom: 20px;
+    text-align: center;
+    width: 165px;
+    height: 20px;
+    background-color: whitesmoke;
+    border: 0px;
+    border-radius: 4px;
+}
+
 
 #input-num{
 
-    border: 1px solid black;
-    border-radius: 2px;
-    height: 30;
-    width: 220px;
-    text-align: center;
-    background-color: lightgray;
-    font-family:Georgia, 'Times New Roman', Times, serif
-}
-#input-num:hover{
+  margin-bottom: 20px;
+  margin-left: 17px;
+  text-align: center;
+  width: 220px;
+  height: 20px;
+  background-color: whitesmoke;
+  border: 0px;
+  border-radius: 4px;
+}   
 
-    border: 2px solid black;
+#buttonn{
+
+  margin-top: 30px;
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  background-color: whitesmoke;
+  border: 0px;
+  border-radius: 4px;
 
 }
+
+#buttonn:hover{
+
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+#tablestyle{
+
+  margin-top: 30px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-left: 68px;
+  width: 1400px;
+  height: auto;
+  padding-bottom: 55px;
+}
+
+

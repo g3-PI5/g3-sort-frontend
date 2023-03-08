@@ -2,27 +2,41 @@ import React, { useState } from "react";
 import "./style.css";
 
 
-const Table = () => {
+const Table = (selection, radix, bubble, binary, linear) => {
     return (
         <div className="Table">
-            <table>
-                <tr>
-                    <td>Nome</td>
-                    <td>Idade</td>
-                    <td>Profissão</td>
-                </tr>
-                <tr>
-                    <td>Ted</td>
-                    <td>22</td>
-                    <td>Estudante</td>
-                </tr>
-                <tr>
-                    <td>Ralf</td>
-                    <td>26</td>
-                    <td>Designer</td>
-                </tr>
-            </table>
-        </div>
+            <div className="selectionValues">
+                <label>Selection Times</label>
+                {(selection.selection)?.map((time, i) => {
+                    return <div className="values"><b>{i + 1}</b> {time} ms</div>
+                })}
+            </div>
+            <div className="radixValues">
+                <label>Radix Times</label>
+                {(selection.radix)?.map((time, i) => {
+                    return <div className="values"><b>{i + 1}</b> {time} ms</div>
+                })}
+            </div>
+            <div className="bubbleValues">
+                <label>Bubble Times</label>
+                {(selection.bubble)?.map((time, i) => {
+                    return <div className="values"><b>{i + 1}</b> {time} ms</div>
+                })}
+            </div>
+            <div className="binaryValues">
+                <label>Binary Times</label>
+                {(selection.binary)?.map((time, i) => {
+                    return <div className="values" ><b>{i + 1}</b> {time} ms </div>
+                })}
+            </div>
+            <div className="linearValues">
+                <label>Linear Times</label>
+                {(selection.linear)?.map((time, i) => {
+                    return <div className="values"><b>{i + 1}</b> {time} ms</div>
+                })}
+            </div>
+
+        </div >
     );
 }
 

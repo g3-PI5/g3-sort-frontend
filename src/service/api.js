@@ -13,8 +13,8 @@ export const bubbleSort = async (value) => {
 export const radixSort = async (value) => {
 	return api.post("/radix", { value });
 };
-export const countingSort = async (value) => {
-	return api.post("/counting", { value });
+export const selectionSort = async (value) => {
+	return api.post("/selection", { value });
 };
 
 //Rotas para os algoritmos de Searching
