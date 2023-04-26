@@ -9,19 +9,18 @@ import {
 } from "./service/api";
 import Table from "./Components/Table";
 
-
 function App() {
 	const [algorithm, setAlgorithm] = useState("radix");
 	const [search, setSearch] = useState(0);
 	const [time, setTime] = useState("Tempo necessário para execução");
 	const [value, setValue] = useState(0);
 	const [loading, isLoading] = useState(false);
-
-	const [selection, setSelection] = useState([])
-	const [radix, setRadix] = useState([])
-	const [bubble, setBubble] = useState([])
-	const [binary, setBinary] = useState([])
-	const [linear, setLinear] = useState([])
+	//TESTE
+	const [selection, setSelection] = useState([]);
+	const [radix, setRadix] = useState([]);
+	const [bubble, setBubble] = useState([]);
+	const [binary, setBinary] = useState([]);
+	const [linear, setLinear] = useState([]);
 
 	const [check, isChecked] = useState(true);
 
@@ -34,7 +33,7 @@ function App() {
 				if (!response.data.time) setTime("Tamanho Inválido");
 				else {
 					setTime(response.data.time + " ms");
-					radix.push(response.data.time)
+					radix.push(response.data.time);
 				}
 				break;
 			case "selection":
@@ -42,7 +41,7 @@ function App() {
 				if (!response.data.time) setTime("Tamanho Inválido");
 				else {
 					setTime(response.data.time + " ms");
-					selection.push(response.data.time)
+					selection.push(response.data.time);
 				}
 				break;
 			case "bubble":
@@ -50,7 +49,7 @@ function App() {
 				if (!response.data.time) setTime("Tamanho Inválido");
 				else {
 					setTime(response.data.time + " ms");
-					bubble.push(response.data.time)
+					bubble.push(response.data.time);
 				}
 				break;
 
@@ -59,17 +58,15 @@ function App() {
 				if (!response.status === 200) setTime("Tamanho Inválido");
 				else {
 					setTime(response.data.time + " ms");
-					binary.push(response.data.time)
+					binary.push(response.data.time);
 				}
 				break;
 			case "linear":
 				response = await linearSearch(value, search);
 				if (!response.status === 200) setTime("Tamanho Inválido");
 				else {
-					setTime(
-						response.data.time + " ms"
-					);
-					linear.push(response.data.time)
+					setTime(response.data.time + " ms");
+					linear.push(response.data.time);
 				}
 				break;
 			default:
@@ -79,8 +76,12 @@ function App() {
 		isLoading(false);
 	};
 	if (loading) {
-
-		return <div className="loader"> <div className="c-loader"></div></div>
+		return (
+			<div className="loader">
+				{" "}
+				<div className="c-loader"></div>
+			</div>
+		);
 	}
 
 	return (
@@ -125,12 +126,26 @@ function App() {
 				</div>
 
 				<div className="button">
-					<button id="buttonn" disabled={(algorithm == "binary" && search < 20) || (algorithm == "binary" && search > 2000000)} onClick={() => handleTime(algorithm)}>Enter</button>
+					<button
+						id="buttonn"
+						disabled={
+							(algorithm == "binary" && search < 20) ||
+							(algorithm == "binary" && search > 2000000)
+						}
+						onClick={() => handleTime(algorithm)}
+					>
+						Enter
+					</button>
 				</div>
-
 			</div>
 			<div id="tablestyle">
-				<Table selection={selection} radix={radix} bubble={bubble} binary={binary} linear={linear} />
+				<Table
+					selection={selection}
+					radix={radix}
+					bubble={bubble}
+					binary={binary}
+					linear={linear}
+				/>
 			</div>
 		</div>
 	);
