@@ -19,9 +19,16 @@ export const selectionSort = async (value) => {
 
 //Rotas para os algoritmos de Searching
 export const binarySearch = async (value, target) => {
-	return api.post("/binary", { value: parseInt(value), target: parseInt(target) });
+	return api.post("/binary", {
+		value: parseInt(value),
+		target: parseInt(target),
+	});
 };
 export const linearSearch = async (value, target) => {
-	return api.post("/linear", { value: parseInt(value), target: parseInt(target) });
+	return api.post("/linear", {
+		value: parseInt(value),
+		target: parseInt(target),
+	});
 };
 
+//TESTE
